@@ -2,8 +2,8 @@
 const axios = require('axios')
 const md5 = require('md5')
 const moment = require('moment')
-const LocalStorage = require('node-localstorage').LocalStorage
-const localStorage = new LocalStorage('./scratch')
+// const LocalStorage = require('node-localstorage').LocalStorage
+// const localStorage = new LocalStorage('./scratch')
 
 class Wyze {
   /**
@@ -44,16 +44,19 @@ class Wyze {
   * get tokens
   */
   async getTokens() {
-    this.accessToken = localStorage.getItem('access_token')
-    this.refreshToken = localStorage.getItem('refresh_token')
+    console.log('getTokens');
+    console.log(`getTokens ${this.accessToken} ${this.refreshToken}`)
+    // this.accessToken = localStorage.getItem('access_token')
+    // this.refreshToken = localStorage.getItem('refresh_token')
   }
 
   /**
   * set tokens
   */
   async setTokens(accessToken, refreshToken) {
-    localStorage.setItem('access_token', accessToken)
-    localStorage.setItem('refresh_token', refreshToken)
+    console.log(`setTokens ${accessToken} ${refreshToken}`)
+    // localStorage.setItem('access_token', accessToken)
+    // localStorage.setItem('refresh_token', refreshToken)
     this.accessToken = accessToken
     this.refreshToken = refreshToken
   }
