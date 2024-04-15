@@ -2,8 +2,8 @@
 const axios = require('axios')
 const md5 = require('md5')
 const moment = require('moment')
-const LocalStorage = require('node-localstorage').LocalStorage
-const localStorage = new LocalStorage('./scratch')
+// const LocalStorage = require('node-localstorage').LocalStorage
+// const localStorage = new LocalStorage('./scratch')
 
 class Wyze {
   /**
@@ -52,8 +52,8 @@ class Wyze {
   * set tokens
   */
   async setTokens(accessToken, refreshToken) {
-    localStorage.setItem('access_token', accessToken)
-    localStorage.setItem('refresh_token', refreshToken)
+    // localStorage.setItem('access_token', accessToken)
+    // localStorage.setItem('refresh_token', refreshToken)
     this.accessToken = accessToken
     this.refreshToken = refreshToken
   }
@@ -63,6 +63,7 @@ class Wyze {
    * @returns {data}
    */
   async login() {
+    console.log('login...');
     let result
     try {
 
